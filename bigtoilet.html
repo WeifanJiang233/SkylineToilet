@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Skyscraper Toilet — Gallery</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#fbfbfb; --ink:#0f0f12; --muted:#6a7180; --line:#e8e9ee; --accent:#0e1aff;
+    --card:#ffffff; --radius:18px;
+  }
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+  a{color:inherit}
+  .page{max-width:1160px;margin:0 auto;padding:28px}
+
+  /* ===== NAV (minimal gallery nav) ===== */
+  .nav{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
+  .brand{font-family:"Playfair Display",serif;font-weight:700;letter-spacing:.02em}
+  .brand a{text-decoration:none}
+  .nav .year{color:var(--muted)}
+
+  /* ===== HERO IMAGE ===== */
+  .hero{position:relative;border-radius:22px;overflow:hidden;background:#111;height:70vh;display:flex;align-items:center;justify-content:center}
+  .hero img{width:100%;height:100%;object-fit:cover}
+  .credit{position:absolute;right:12px;bottom:12px;background:#0009;border:1px solid #ffffff33;color:#fff;padding:6px 10px;border-radius:999px;font-size:.82rem}
+
+  /* ===== WALL TEXT (gallery plaque) ===== */
+  .wall{display:grid;grid-template-columns:1.2fr 1fr;gap:22px;margin:22px 0}
+  @media (max-width:900px){.wall{grid-template-columns:1fr}}
+  .plaque{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px}
+  .plaque h1{margin:0 0 8px;font-family:"Playfair Display",serif;font-size:clamp(28px,4.6vw,48px);line-height:1.06}
+  .plaque .sub{margin:4px 0 14px;color:var(--muted)}
+  .plaque p{margin:.6em 0;line-height:1.8}
+
+  .info{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:18px}
+  .info h3{margin:0 0 10px;font-family:"Playfair Display",serif}
+  .row{display:flex;gap:8px;flex-wrap:wrap}
+  .btn{background:#0e1aff;color:#fff;border:0;border-radius:12px;padding:10px 14px;cursor:pointer;font-weight:600}
+  .btn.secondary{background:#f4f5ff;color:#101132;border:1px solid #ccd0ff}
+  .pill{background:#f7f7fb;border:1px solid var(--line);border-radius:999px;padding:6px 10px;color:#1b1e28}
+
+  /* ===== QUEUE CARD ===== */
+  .queue{display:grid;grid-template-columns:1fr;gap:12px;margin-top:10px}
+  .ticket{display:none;background:var(--card);border:1px dashed #cfd3e6;border-radius:14px;padding:16px}
+  .ticket.show{display:block}
+  .ticket h4{margin:0 0 4px;font-weight:700}
+  .num{font-family:"Playfair Display",serif;font-size:40px;line-height:1}
+  .muted{color:var(--muted)}
+
+  /* ===== SOUND BOARD ===== */
+  .sound{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:18px;margin-top:18px}
+  .sound h3{margin:0 0 10px;font-family:"Playfair Display",serif}
+  .sound .board{display:flex;gap:8px;flex-wrap:wrap}
+
+  /* ===== MINI GALLERY STRIP ===== */
+  .strip{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:22px}
+  @media (max-width:900px){.strip{grid-template-columns:1fr 1fr}}
+  .ph{position:relative;background:#111;border-radius:14px;overflow:hidden;aspect-ratio:4/3}
+  .ph img{width:100%;height:100%;object-fit:cover}
+</style>
+</head>
+<body>
+<div class="page">
+  <header class="nav">
+    <div class="brand"><a href="#">TOILET CITY GALLERY</a></div>
+    <div class="year">2025</div>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" aria-label="Skyscraper Toilet">
+    <!-- Tip: Replace with your own direct-link image (the skyscraper toilet). -->
+    <img id="heroImg" src="https://raw.githubusercontent.com/WeifanJiang233/ToiletPublic/main/Toilet.png" alt="Skyscraper-scale public toilet sculpture in a city" />
+    <div class="credit">Skyscraper Toilet — photographic documentation</div>
+  </section>
+
+  <!-- ===== WALL TEXT + QUEUE ===== -->
+  <section class="wall">
+    <article class="plaque" aria-label="Wall text">
+      <h1>Ascending Etiquette — Skyscraper Toilet</h1>
+      <div class="sub">Stainless steel, concrete, crowd-control protocol | Hundred-meter scale | Urban intervention</div>
+      <p>
+        This work raises <strong>everyday shame</strong> to a <strong>metropolitan altitude</strong>: a toilet as tall as a tower, tuned to the district's wind and reflecting the weather and signage around it. 
+        Visitors ascend a narrow sky-stair, wavering between exposure and ceremony. By erecting the city's hidden plumbing into open air, the artist turns a private need into a public skyline.
+      </p>
+      <p>
+        Here, queuing is not only waiting—it is a form of <strong>civic choreography</strong>. Footsteps, breath, patience, and the gaze of bystanders compose a score of public life. You don't have to enter a gallery; you only have to look up and watch the city rinse and recirculate its own order.
+      </p>
+      <p class="muted">Note: This page is an exhibition-style online document. Replace images with your own photography or renders.</p>
+    </article>
+
+    <aside class="info" aria-label="Queue & Audio">
+      <h3>Join the Queue</h3>
+      <div class="row">
+        <button class="btn" id="joinBtn" title="Join the queue">Join the Queue</button>
+        <button class="btn secondary" id="ambientBtn" title="Play ambient">Play/Pause Ambient</button>
+      </div>
+
+      <div class="queue">
+        <div class="ticket" id="ticket">
+          <h4>Your Queue Number</h4>
+          <div class="num" id="queueNum">—</div>
+          <p class="muted" id="aheadText">Calculating…</p>
+        </div>
+      </div>
+
+      <div class="sound">
+        <h3>Soundboard</h3>
+        <div class="board">
+          <button class="btn secondary" id="btnPoo">Poo</button>
+          <button class="btn secondary" id="btnPee">Pee</button>
+          <button class="btn secondary" id="btnFart">Fart</button>
+        </div>
+      </div>
+    </aside>
+  </section>
+
+  <!-- ===== THUMB STRIP ===== -->
+  <section class="strip" aria-label="Process / Documentation">
+    <figure class="ph"><img src="https://raw.githubusercontent.com/WeifanJiang233/CliffToilet/main/clifftoilet.png" alt="Study — cliff outhouse"/></figure>
+    <figure class="ph"><img src="https://raw.githubusercontent.com/WeifanJiang233/CliffToilet/main/collapsedtoilet.png" alt="Study — collapse"/></figure>
+    <figure class="ph"><img src="https://raw.githubusercontent.com/WeifanJiang233/ToiletPublic/main/Toilet.png" alt="City sculpture study"/></figure>
+  </section>
+</div>
+
+<!-- ===== AUDIO ===== -->
+<audio id="bgAudio" src="https://raw.githubusercontent.com/WeifanJiang233/CliffToilet/main/ambience.ogg" preload="auto"></audio>
+<audio id="sfxPoo" src="https://raw.githubusercontent.com/WeifanJiang233/ToiletPublic/main/poo.mp3" preload="auto"></audio>
+<audio id="sfxPee" src="https://raw.githubusercontent.com/WeifanJiang233/ToiletPublic/main/pee.wav" preload="auto"></audio>
+<audio id="sfxFart" src="https://raw.githubusercontent.com/WeifanJiang233/ToiletPublic/main/fart.wav" preload="auto"></audio>
+
+<script>
+// ===== Ambient toggle =====
+const ambientBtn = document.getElementById('ambientBtn');
+const bgAudio = document.getElementById('bgAudio');
+ambientBtn.addEventListener('click', async ()=>{
+  try{
+    if (bgAudio.paused) { await bgAudio.play(); ambientBtn.textContent = 'Pause Ambient'; }
+    else { bgAudio.pause(); ambientBtn.textContent = 'Play Ambient'; }
+  }catch(e){ /* autoplay restrictions */ }
+});
+
+// ===== SFX =====
+const playOnce = el=>{ el.currentTime = 0; el.play().catch(()=>{}); };
+['Poo','Pee','Fart'].forEach(k=>{
+  document.getElementById('btn'+k).addEventListener('click',()=> playOnce(document.getElementById('sfx'+k)));
+});
+
+// ===== Queue (random each time, simple simulation) =====
+const joinBtn = document.getElementById('joinBtn');
+const ticket = document.getElementById('ticket');
+const queueNum = document.getElementById('queueNum');
+const aheadText = document.getElementById('aheadText');
+
+joinBtn.addEventListener('click', ()=>{
+  // Simulate a random total for the day and generate your number:
+  const totalToday = Math.floor(200 + Math.random()*1200); // 200–1400
+  const yourNum = Math.floor(1 + Math.random()*totalToday);
+  const ahead = Math.max(0, yourNum - 1);
+
+  queueNum.textContent = '# ' + yourNum;
+  aheadText.textContent = `People ahead of you: ${ahead}`;
+  ticket.classList.add('show');
+
+  // Scroll to the ticket area like receiving a gallery stub
+  ticket.scrollIntoView({behavior:'smooth', block:'center'});
+});
+</script>
+</body>
+</html>
